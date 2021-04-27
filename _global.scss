@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+body {
+  box-sizing: border-box;
+  font-family: lato, sans-serif;
+  font-weight: 400;
+  color: white;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+.txt-center {
+  text-align: center;
+}
+.mg-btm-80 {
+  margin-bottom: 80px;
+}
+.mg-btm-40 {
+  margin-bottom: 40px;
+}
+.mg-btm-15 {
+  margin-bottom: 15px;
+}
+
+.heading-tertiary {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  // font-size: 1.3rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

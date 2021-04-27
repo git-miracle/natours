@@ -1,0 +1,121 @@
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(4, 251, 119, 0.733),
+      rgba(51, 155, 204, 0.692)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  .logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+
+    .logo {
+      height: 50px;
+    }
+  }
+
+  .text-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+  }
+
+  .heading-primary {
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 69px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+
+    @include respond(phone) {
+      font-size: 6rem;
+      letter-spacing: 1.5rem;
+    }
+    @include respond(tab-port) {
+      font-size: 6.2rem;
+    }
+  }
+
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 20px;
+    font-weight: 700;
+    // animation
+    animation-name: moveInRight;
+    animation-duration: 1s;
+
+    @include respond(phone) {
+      font-size: 1.1rem;
+      letter-spacing: normal;
+    }
+    @include respond(tab-port) {
+      // font-size: ;
+      letter-spacing: 1.5rem;
+    }
+  }
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.103);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.103);
+}
+.btn-w {
+  background-color: white;
+  color: #777;
+}
+.btn-g {
+  background-color: rgb(8, 170, 89);
+  color: rgb(255, 255, 255);
+}
+
+.btn-txt {
+  &:link,
+  &:visited {
+    font-size: 1.1rem;
+    color: rgb(112, 179, 11);
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(112, 179, 11);
+    padding: 3px;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    color: white;
+    background-color: rgb(112, 179, 11);
+    box-shadow: 0 1rem 2rem rgba(63, 63, 63, 0.541);
+    transform: translateY(-2px);
+  }
+}
