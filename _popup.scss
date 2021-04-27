@@ -1,0 +1,82 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+
+  &:target{
+    opacity: 1;
+    visibility: visible
+  }
+  &__close{
+    color: rgb(185, 185, 185);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45px;
+    transition: all .3s;
+
+    &:hover{
+      color: rgb(39, 224, 132);
+      transform: translateY(-5px)
+    }
+
+  }
+
+  &__content{
+    @include absCenter;
+    border-radius: 3px;
+
+     width: 75%;
+    //  height: 70%;
+     background-color:$color-grey-dark-3;
+      // rgb(138, 137, 137);
+     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.589);
+     display: table;
+     overflow: hidden;
+    
+  }
+  &__left{
+  width: 33.333333%;
+  display: table-cell;
+  }
+
+  &__right{
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px 30px;
+
+  }
+
+  &__img{
+    display: block;
+    width: 100%;
+  }
+  &__text{
+    margin-bottom: 30px;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid rgb(7, 245, 245);
+    hyphens: auto;
+
+
+  }
+}
+
